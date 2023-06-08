@@ -409,7 +409,7 @@ padding: 8px;
 }
 
 #issues tr th:first-child,#issues tr td:nth-child(1){
-  width: 10%;
+  width: 15%;
 }
 
 #issues tr th:nth-child(2),#issues tr td:nth-child(2){
