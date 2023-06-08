@@ -1,0 +1,42 @@
+<link rel='stylesheet' href='/stylesheets/styleCrm.css'/>
+
+<style>
+
+.imgemp{
+  width : 30px;
+  height: 30px;
+}
+</style>
+
+<section id="employee-section">
+
+        <h2>Your Leads</h2>
+        <table id="leads" style="margin-left: 50px; margin-bottom:50px">
+            <tr>
+                <th>id</th>
+                <th>full_name</th>
+                <th>address</th>
+                <th>phone_num</th>
+                <th>total</th>
+                <th>status</th>
+                <th>Actions</th>
+            </tr>
+            {{#each leads }}
+            <tr>
+                <td>{{this.id}}</td>
+                <td>{{this.full_name}}</td>
+                <td>{{this.address}}</td>
+                <td>{{this.phone_number}}</td>
+                <td>{{this.total}}</td>
+                <td>{{this.status}}</td>
+
+                <td> 
+                    <a href="/crm/leadConfirmed/{{this.id}}"><img  class="imgemp" src="/images/img/crm/comfirmed.png"> </a>
+                    <a href="/crm/leadCanceled/{{this.id}}"><img class="imgemp" src="/images/img/crm/canceled.png" style="filter: hue-rotate(180deg);"> </a>
+                    </td>
+
+            </tr>
+            {{/each}}
+        </table>
+</section>
+

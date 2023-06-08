@@ -1,0 +1,49 @@
+{{#if favs}}
+<section id="product1" class="section-p1">
+    <div id="cartMessage"></div>
+                <div class="pro-container">
+                    {{#each favs }}
+                    <div class="pro" id="fav-item-{{this.id}}">
+                        <div class="product-link" data-product-id="{{this.id}}">
+                            <img src="{{this.imagePath}}" alt="">
+                            <div class="des">
+                                <span>{{this.brand}}</span>
+                                <h5>{{this.title}}</h5>
+                                <div class="star">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <h4>${{this.price}}</h4>
+                            </div>
+                        </div>
+                        <form class="proForm" method="post" action="/add-to-cart">
+                            <input type="hidden" name="id" value="{{this.id}}">
+                            <input type="hidden" name="title" value="{{this.title}}">
+                            <input type="hidden" name="price" value="{{this.price}}">
+                            <input type="hidden" name="image" value="{{this.imagePath}}">
+                            <input type="hidden" name="stock" value="{{this.stock}}">
+                            <input type="hidden" name="quantity" value="1">
+                            {{#if this.stock}}
+                            <button id="ShopCart" name="add to cart"><i class="fal fa-shopping-cart cart"></i></button>
+                            {{else}}
+                            <button id="ShopCartGri" name="add to cart"><i class="fal fa-shopping-cart cart"></i></button>
+                            {{/if}}
+                            <a id="del" href="/account/delete-fav/{{this.id}}" onclick="deleteFavItem('{{this.id}}'); return false;"><i class="fal fa-times"></i></a>
+                        </form>
+                    </div>
+                    {{/each}}
+    </div>
+</section>
+{{else}}
+<p id="accountStat">You haven't added any favourite products yet, feel free to add some whenever you want.</p>
+{{/if}}
+
+
+            
+<script src="/javascripts/scriptCart.js"></script>
+<script src="/javascripts/redirect.js"></script>
+
+<script src="/javascripts/scriptFav.js"></script>

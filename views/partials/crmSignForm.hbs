@@ -1,0 +1,24 @@
+<link rel='stylesheet' href='/stylesheets/signFormCrm.css'/>
+
+{{#if message}}
+    <div id="signMessage" class="error-message"><i class="far fa-exclamation-triangle"></i> {{message}}
+        <button id="staticSignClose"> <i class="far fa-times-circle "></i></button>
+    </div>
+{{/if}}
+
+<section class="bodySign">
+    <div class="form-contain login-contain">
+        <form id="login-form" action="/crm/login" method="POST">
+            <div id="login-message"></div>
+            <h3>Login Here</h3>
+            <input type="text" placeholder="Login" name="login" value="johnsmith" required>
+            <input type="password" placeholder="Password" name="passLogin" value="password123" required>
+            <button name="btnlogin">Login</button>  
+        </form>
+    </div>
+
+</section>
+
+
+<script src="/javascripts/crmScriptSign.js"></script>
+

@@ -1,0 +1,33 @@
+{{#if rows}}
+
+<section id="cart" class="section-p1">
+    <table width="100%">
+                    <thead>
+                        <tr>
+                            <td>Image</td>
+                            <td>Product</td>
+                            <td>Price</td>
+                            <td>Quantity</td>
+                            <td>Subtotal</td>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        {{#each rows }}
+                            <tr>
+                                <td><img src="{{this.imagePath}}"></td>
+                                <td><a href="/product/{{this.id}}" style="font-weight: 600">{{this.title}}</a></td>
+                                <td>$ {{this.price}}</td>
+                                <td>
+                                    <span>{{this.quantity}}</span>
+                                </td>
+                                <td>$ {{ this.subtotal}}</td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                    
+    </table>
+</section>
+{{else}}
+<p id="accountStat">You haven't made any orders yet. </p>
+{{/if}}

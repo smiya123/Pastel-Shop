@@ -1,0 +1,53 @@
+<section id="prodetails" class="section-p1">
+            <div class="single-pro-image">
+                <img src="{{product.imagePath}}" width="100%" id="MainImg" alt="">
+
+                <div class="small-img-group">
+                    <div class="small-img-col">
+                        <img src="{{product.imagePath}}" width="100%" class="small-img" alt="">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="{{product.image1}}" width="100%" class="small-img" alt="">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="{{product.image2}}" width="100%" class="small-img" alt="">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="{{product.image3}}" width="100%" class="small-img" alt="">
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <div class="single-pro-details">
+                <div id="cartMessage"></div>
+                <h6>Home / Shop</h6>
+                <h4>{{product.title}}</h4>
+                <h2>${{product.price}}</h2>
+                
+                {{#if product.stock}}
+                <form class="proForm" method="post" action="/add-to-cart">
+                    <span style="font-size: 12px;">Quantity </br></span>
+                    <input type="number" name="quantity" min="1" required>
+                    <input type="hidden" name="id" value="{{product.id}}">
+                    <input type="hidden" name="title" value="{{product.title}}">
+                    <input type="hidden" name="price" value="{{product.price}}">
+                    <input type="hidden" name="image" value="{{product.imagePath}}">
+                    <input type="hidden" name="stock" value="{{product.stock}}">
+                    <button class="normal" id="instock">Add To Cart</button>
+                </form>
+                {{else}}
+                <span style="font-size: 12px;">Quantity </br></span>
+                <input type="number" name="quantity">
+                <button class="normal" id="outofstock">Add To Cart</button>
+                <div class="outofstockMessage"><i class="far fa-exclamation-triangle"></i> This Product is currently out of stock</div>
+                {{/if}}
+                <h4>Product Details</h4>
+                <span>{{product.description}}
+                </span>
+            </div>
+        </section>
+
+

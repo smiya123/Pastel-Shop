@@ -1,0 +1,29 @@
+<link rel='stylesheet' href='/stylesheets/styleCrm.css'/>
+
+
+    <section id="trouble-section">
+        
+            <h2>Client's Issues</h2>
+
+            <table id="trouble" style="margin: 0 0 50px 50px">
+                <tr>
+                    <th>Email</th>
+                    <th>Issue</th>
+                    <th>Action</th>
+                </tr>
+                {{#each issues }}
+                <tr>
+                    <td>{{this.email}}</td>
+                    <td style="max-width: 400px;word-break: break-all;">
+                        {{this.issue}}
+                    </td>
+                    <td><button class="respond-issue" data-issue="{{this.id}}" data-email="{{this.email}}" onclick="respondIssue(this)">Respond</button></td>
+
+                </tr>
+                {{/each}}
+            </table>
+    </section>
+
+
+<script src="/javascripts/scriptCrm.js"></script>
+

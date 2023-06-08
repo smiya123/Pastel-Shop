@@ -1,0 +1,34 @@
+<section id="form-details">
+            <form id="contactForm" action="/contact/submit-form" method="POST">
+                <span>LEAVE A MESSAGE</span>
+                <h2>We love to hear from you</h2>
+                <input type="text" placeholder="Your Name" name="name">
+                <input type="email" placeholder="E-mail" name="email" required>
+                <input type="text" placeholder="Subject" name="subject">
+                <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+
+                <button type ="submit" id="submit-button" class="normal">Send</button>
+            </form>
+            <div id="loading-popup" class="loading-overlay" style="display: none;">
+                <div id="loading-spinner"></div>
+            </div>
+
+            <div class="people">
+                <div>
+                    <img src="/images/img/people/1.png" alt="">
+                    <p><span>Mr. Hamada El Kabtane</span> Supervisor <br> Phone: +212 712947992 <br> Email: contact@example.com</p>
+                </div>
+                <div>
+                    <img src="/images/img/people/2.png" alt="">
+                    <p><span>Zyat Ilyas</span> developper <br> Phone: +212 663771980 <br> Email: contact@example.com</p>
+                </div>
+                <div>
+                    <img src="/images/img/people/3.png" alt="">
+                    <p><span>Ouhinad Ouassim</span> developper <br> Phone: +212 712947992 <br> Email: contact@example.com</p>
+                </div>
+
+            </div>
+        </section>
+
+
+<script src="/javascripts/contactForm.js"></script>

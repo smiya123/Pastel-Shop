@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+  db:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: mypassword
+      MYSQL_DATABASE: az_ecom_app
+      MYSQL_USER: user
+      MYSQL_PASSWORD: mypassword
+    volumes:
+      - data:/var/lib/mysql
+    networks:
+      - app-network
+
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      DB_HOST: db
+      DB_USER: user
+      DB_PASSWORD: mypassword
+      DB_DATABASE: az_ecom_app
+    depends_on:
+      - db
+    networks:
+      - app-network
+    command: /bin/bash
+    tty: true
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: mypassword
+    ports:
+      - "8080:80"
+    networks:
+      - app-network
+
+volumes:
+  data:
+
+networks:
+  app-network:
+    driver: bridge

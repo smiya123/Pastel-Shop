@@ -1,0 +1,47 @@
+<style>
+
+    #divD{
+        width: 85%;
+    }
+    /* Style tableau */
+    th {
+        background-color: #575964;
+        color: white;
+    }
+    
+</style>
+
+
+    <section id="employee-leads">
+      
+      <h2>Your employees Leads</h2>
+
+      <section id="employee-manager">    
+
+        <table id="leads">
+          <tr>
+            <th>Employee</th>
+            <th>id</th>
+            <th>Client</th>
+            <th>address</th>
+            <th>phone_num</th>
+            <th>total</th>
+            <th>status</th>
+          </tr>
+            {{#each leads }}
+          <tr>
+            <td>{{this.empl_fullname}}</td>
+            <td>{{this.id}}</td>
+            <td>{{this.full_name}}</td>
+            <td>{{this.address}}</td>
+            <td>{{this.phone_number}}</td>
+            <td>{{this.total}}</td>
+            <td>{{this.status}}</td>
+          </tr>
+            {{/each}}
+            
+        </table>
+      </section> 
+
+    </section>
+

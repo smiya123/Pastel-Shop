@@ -1,0 +1,45 @@
+<section id="product1" class="section-p1">
+            <h2>New Arrivals</h2>
+            <p>Summer Collection New Modern Design</p>
+            <div id="cartMessage"></div>
+            <div class="pro-container">
+                {{# each newArrivals }}
+                <div class="pro">
+                    <div class="product-link" data-product-id="{{this.id}}">
+                        <img src="{{this.imagePath}}" alt="">
+                        <div class="des">
+                            <span>{{this.brand}}</span>
+                            <h5>{{this.title}}</h5>
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4>${{this.price}}</h4>
+                        </div>
+                    </div>
+                    <form class="proForm" method="post" action="/add-to-cart">
+                        <input type="hidden" name="id" value="{{this.id}}">
+                        <input type="hidden" name="title" value="{{this.title}}">
+                        <input type="hidden" name="price" value="{{this.price}}">
+                        <input type="hidden" name="image" value="{{this.imagePath}}">
+                        <input type="hidden" name="stock" value="{{this.stock}}">
+                        <input type="hidden" name="quantity" value="1">
+                        {{#if this.stock}}
+                        <button id="ShopCart" name="add to cart"><i class="fal fa-shopping-cart cart"></i></button>
+                        {{else}}
+                        <button id="ShopCartGri" name="add to cart"><i class="fal fa-shopping-cart cart"></i></button>
+                        {{/if}}
+                    </form>
+                    <form class="favForm" method="post" action="/add-to-fav">
+                        <input type="hidden" name="proid" value="{{this.id}}">
+                        <button id="Fav" name="add to fav"><i class="fal fa-heart"></i></button>
+                    </form>
+                </div>
+                {{/each}}
+            </div>
+</section>
+
+

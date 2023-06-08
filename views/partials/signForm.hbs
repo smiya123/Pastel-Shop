@@ -1,0 +1,55 @@
+<link rel='stylesheet' href='/stylesheets/signForm.css'/>
+
+{{#if message}}
+    <div id="signMessage" class="error-message"><i class="far fa-exclamation-triangle"></i> {{message}}
+        <button id="staticSignClose"> <i class="far fa-times-circle "></i></button>
+    </div>
+{{/if}}
+
+<section class="bodySign">
+<div class="sign-contain" id="sign-contain">
+    <div class="form-contain register-contain">
+        <form id="registration-form" action="/sign/register" method="POST">
+            <div id="registration-message"></div>
+            <h3>Register Here</h3>
+            <input type="text" placeholder="Username" name="username" required>
+            <input type="email" placeholder="Email" name="email" required>
+            <input type="password" placeholder="Password" name="password" required>
+            <button name="register">Register</button>
+        </form>
+    </div>
+
+    <div class="form-contain login-contain">
+        <form id="login-form" action="/sign/login" method="POST">
+            <div id="login-message"></div>
+            <h3>Login Here</h3>
+            <input type="email" placeholder="Email" name="emailLogin" required>
+            <input type="password" placeholder="Password" name="passLogin" required>
+            <button name="login">Login</button>
+        </form>
+    </div>
+
+    <div class="overlay-contain">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h3 class="title">Hello<br> Shopper</h3>
+                <p>if you have an account, login here and Shop</p>
+                <button class="ghost" id="login">Login
+                    <i class="far fa-angle-double-left login"></i>
+                </button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h3 class="title">Start your<br> journey now</h3>
+                <p>if you don't have an account yet, Join us and enjoy Shopping</p>
+                <button class="ghost" id="register">Register
+                    <i class="far fa-angle-double-right register"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+
+<script src="/javascripts/scriptSign.js"></script>
+

@@ -1,0 +1,27 @@
+<link rel='stylesheet' href='/stylesheets/orderForm.css'/>
+
+
+<div id="loading-popup" class="loading-overlay" style="display: none;">
+    <div id="loading-spinner"></div>
+</div>
+
+<div class="orderBox">
+
+    <form id="orderForm" method="post" action="/order/submit-order">
+        <h3>Order Form</h3>
+        <input name="fullName" type="text" placeholder="Full Name" required>
+        <input name="address" type="text" placeholder="Address" required>
+        <input name="phone" type="text" placeholder="Phone number" required>
+        
+        <div class="line"></div>
+        <div id="info">
+            <h5>total : ${{total}}</h5>
+            <h6>Cash on Delivery</h6>
+        </div>
+        <button type="submit">Submit Order</button>
+    </form>
+    
+</div>
+
+
+<script src="/javascripts/scriptOrders.js"></script>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+</head>
+<body >
+<div class="container" id="divChatbot">
+  <div class="chat-header">
+        <img src="/images/img/chatbot.png" alt="bot" />
+        <div class="title" >PASTEL Chat</div>
+        <img id="divclose" src="images\img\minimize.png" alt="Mini">
+      </div>
+      <div id="divNewproducts">
+        {{#each allProducts}}
+          <div class='slider'>
+            <div class="slide" >
+              
+              <a href='http://localhost:3000/product/{{this.id}}'>
+                <img src='{{this.imagePath}}' alt='image du produit ' id='slide' width='220' height='220'>
+              </a>
+              <div class='precedent' onclick='ChangeSlide(-1)'>
+                <img src="/images/img/arrowleft.png" width="30" height="30">
+              </div>
+              <div class='suivant' onclick='ChangeSlide(1)'>
+                <img src="/images/img/arrowright.png" width="30" height="30">
+              </div> 
+            </div>
+            <div id='idtitle'>
+              <div>{{this.title}}</div> 
+              <div>{{this.price}} DH</div>
+            </div>
+            <div class='url'><a href='http://localhost:3000/product/{{this.id}}'>See more detail</a></div><br>
+          </div>
+          {{/each}}
+      </div>
+
+      <section class="chat-body" id="sectionChat">
+        <section class="bot_res" id="bot_res">
+          <div class="bot_kaspoo">Hi! How can I help you?</div><br>
+        </section>
+        
+        <section class="response" id="response1">
+          <div id="btn_1" class='btn_response'  onclick='seeNewproduct()'> I would like to see the new products</div><br>
+          <div id="btn_2"  class='btn_response' onclick='subscribe()'>I want to subscribe to the newsletter </div><br>
+          <div id="btn_3"  class='btn_response' onclick='SomeIssues()'>I am having some issues </div><br>
+        </section>
+
+        <section class="bot_subscribe" id ="bot_subscribe" style="display: none;">
+          <div id="btn_sub" class="bot_kaspoo" >Type your e-mail here please : </div>
+          <div id="txt_sub" class="bot_kaspoo" >
+            <input type="email" id="mail" width="100%" placeholder="Your mail ...">
+            <img src="/images/img/send.svg" id="icone" alt="send" class="send" />  
+            </div>
+        </section>
+
+        <section class="bot_issues" id ="bot_issues" style="display: none;">
+          <div id="btn_issues" class="bot_kaspoo" >Can you describe your problem?</div>
+          <div id="txt_issues" class="bot_kaspoo" >
+            <input type="email" id="email" width="100%" placeholder="Your mail ...">
+            <textarea id ="message" width="100%" placeholder="Your issue ..." rows="10"></textarea>
+            <img src="/images/img/send.svg" alt="send" id="IconSend" class="send" />  
+            </div>
+        </section>
+        <div  class="bot_kaspoo bot_res" id="email_registred" style="display: none;"> your email is registered successfully</div>
+        <div  class="bot_kaspoo bot_res" id="issues_sent" style="display: none;"> 
+          Your issue is successfully sent <br>
+          to managers. an answer will be <br>
+          sent to you by e-mail <br>
+          as soon as possible
+          </div>
+        <div id="btn_Menu"  style="display: none;" onclick="seeMenu()"> Menu</div><br>
+      </section>
+      
+      <div class="chat-input" style="display:none;">
+        <div class="input-sec">
+          <input type="text" id="txtInput" placeholder="Typ here" autofocus />
+        </div>
+        <div class="send">
+          <img src="images/img/send.svg" alt="send" />
+        </div>
+      </div>
+
+    </div>
+    <div id="chatbot-logo">
+          <img src="images\img\logoChat.png" width="100" height="100" alt="Chatbot Logo">
+    </div>
+<script src="/javascripts/scriptChatbot.js"></script>
+
+</body>

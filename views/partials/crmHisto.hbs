@@ -1,0 +1,53 @@
+<link rel='stylesheet' href='/stylesheets/styleCrm.css'/>
+
+
+    <section id="employee-section">
+            <h2>My confirmed leads : </h2>
+            <table id="leads" style="margin: 0 0 50px 50px">
+                <tr>
+                    <th>id</th>
+                    <th>full_name</th>
+                    <th>address</th>
+                    <th>phone_num</th>
+                    <th>total</th>
+                    <th>status</th>
+                </tr>
+                {{#each leadsConfirmed }}
+                <tr>
+                    <td>{{this.id}}</td>
+                    <td>{{this.full_name}}</td>
+                    <td>{{this.address}}</td>
+                    <td>{{this.phone_number}}</td>
+                    <td>{{this.total}}</td>
+                    <td>{{this.status}}</td>
+
+                </tr>
+                {{/each}}
+            </table>
+    </section>
+
+    <section id="employee-section">
+        <h2>My canceled leads : </h2>
+        <table id="leads" style="margin: 0 0 50px 50px">
+            <tr>
+                <th>id</th>
+                <th>full_name</th>
+                <th>address</th>
+                <th>phone_num</th>
+                <th>total</th>
+                <th>status</th>
+            </tr>
+            {{#each leadsCanceled }}
+            <tr>
+                <td>{{this.id}}</td>
+                <td>{{this.full_name}}</td>
+                <td>{{this.address}}</td>
+                <td>{{this.phone_number}}</td>
+                <td>{{this.total}}</td>
+                <td>{{this.status}}</td>
+
+            </tr>
+            {{/each}}
+        </table>
+    </section>
+

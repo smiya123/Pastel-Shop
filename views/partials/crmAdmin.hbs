@@ -1,0 +1,61 @@
+<link rel='stylesheet' href='/stylesheets/styleCrm.css'/>
+
+<body>
+
+        <section id="statistics">
+
+            <h2>Pastel Stats</h2>
+
+            <section id="stats">
+                <div class="stats-box">
+                    <div id="text">
+                        <h5> {{nbrPending}}</h5> 
+                        <p>Pending</p>
+                    </div> 
+                    <img src="/images/img/crm/pending.png">   
+                </div> 
+                <div class="stats-box">
+                    <div id="text">
+                        <h5> {{nbrConfirmed}}</h5>
+                        <p>Confirmed</p>
+                    </div>
+                    <img src="/images/img/crm/comfirmed.png">  
+                </div> 
+                <div class="stats-box">
+                    <div id="text">
+                        <h5> {{nbrCanceled}}</h5> 
+                        <p>Canceled</p>    
+                    </div>
+                    <img  src="/images/img/crm/canceled.png">   
+                </div> 
+            </section>
+        </section>
+
+        <section id="employee-section">
+
+            <h2>Employees List</h2>
+            
+            <section id="employee-manager">
+
+                <table id="employees">
+                    <tr>
+                        <th>Id</th>
+                        <th>Full Name</th>
+                        <th>Remove</th>
+                    </tr>
+                    {{#each employes }}
+                    <tr>
+                        <td>{{this.id}}</td>
+                        <td>{{this.full_name}}</td>
+                        <td><a href="/crm/deleteEmployee/{{this.id}}"><img id="imgDelete" src="/images/img/crm/delete.png"></a></td>
+                    </tr>
+                    {{/each}}
+                </table>
+                <button class="btn" id="new-employee">New Employee</button>
+            </section>
+
+        </section>
+    </body>
+
+    <script src="/javascripts/scriptCrm.js"></script>
+</html>

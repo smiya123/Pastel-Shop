@@ -1,0 +1,78 @@
+<section id="cart" class="section-p1">
+            {{#if message}}
+                <div id="cartStaticMessage" class="success-message"><i class="far fa-check-square"></i> {{message}} 
+                    <button id="staticCartClose"> <i class="far fa-times-circle "></i></button>
+                </div>
+            {{/if}}
+            <div id="cartMessage"></div>
+            <table width="100%">
+                <thead>
+                    <tr>
+                        <td>Remove</td>
+                        <td>Image</td>
+                        <td>Product</td>
+                        <td>Price</td>
+                        <td>Quantity</td>
+                        <td>Subtotal</td>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    {{#each cart }}
+                        <tr id="cart-item-{{this.id}}">
+                            <td><a href="/cart/delete-cart/{{this.id}}" onclick="deleteCartItem('{{this.id}}'); return false;"><i class="far fa-times-circle "></i></a></td>
+                            <td><img src="{{this.image}}"></td>
+                            <td><a href="/product/{{this.id}}">{{this.title}}</a></td>
+                            <td>$ {{this.price}}</td>
+                            <td>
+                                <a href="/cart/minus-qty/{{this.id}}" onclick="minusqty('{{this.id}}', 'proQty-{{this.id}}', 'subtot-{{this.id}}'); return false;"><i class="far fa-minus-circle"></i></a>
+                                <span id="proQty-{{this.id}}">{{this.quantity}}</span>
+                                <a href="/cart/add-qty/{{this.id}}" onclick="addqty('{{this.id}}', 'proQty-{{this.id}}', 'subtot-{{this.id}}'); return false;"><i class="far fa-plus-circle"></i></a>
+                            </td>
+                            <td id="subtot-{{this.id}}">$ {{this.totalPro}}</td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+                
+            </table>
+        </section>
+
+
+            <div id="subtotal">
+                <h3>Cart Totals</h3>
+                <table>
+                    <tr>
+                        <td>Cart Subtotal</td>
+                        {{#if total}}
+                        <td id="totalCart">$ {{total}}</td>
+                        {{else}}
+                        <td id="totalCart">$ 0</td>
+                        {{/if}}
+                    </tr>
+                    <tr>
+                        <td>Shipping</td>
+                        <td>Free</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        {{#if total}}
+                        <td ><strong id="totalCartS">$ {{total}}</strong></td>
+                        {{else}}
+                        <td ><strong id="totalCartS">$ 0</strong></td>
+                        {{/if}}
+                    </tr>
+                    <tr>
+                        <td>Payment Method</td>
+                        <td >Cash On Delivery</td>
+                    </tr>
+                </table>
+                {{#if total}}
+                <a style="text-decoration: none;" href="/order"><button class="normal" id="checkout-btn">Order Now</button></a>
+                {{else}}
+                <button class="normal" id="checkout-btn">Order Now</button>
+                {{/if}}
+            </div>
+        </section>
+
+
+<script src="/javascripts/scriptCart.js"></script>

@@ -1,0 +1,94 @@
+.orderBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10%;
+    
+}
+
+#orderForm,
+.userSetForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 25px;
+    width: 400px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#orderForm h3,
+.userSetForm h3{
+    margin-bottom: 10px;
+}
+
+#orderForm input,
+.userSetForm input{
+    margin: 6px;
+    border: 0px;
+    border-radius: 15px;
+    background-color: #f1f1f1;
+    height: 40px;
+    width: 80%;
+    padding: 10px;
+}
+
+#orderForm button,
+.userSetForm button{
+    margin-top: 10px;
+    border: 0px;
+    border-radius: 15px;
+    background-color: #14aba1;
+    color: #fefefe;
+    font-weight: 600;
+    height: 40px;
+    width: 40%;
+    padding: 10px;
+    transition: 0.3s ease;
+}
+
+#orderForm button:hover,
+.userSetForm button:hover{
+    cursor: pointer;
+    background-color: #2ac9be;
+}
+
+.line {
+    border-top: 0.5px solid #dedede;
+    margin: 20px 0;
+    height: 1px;
+    width: 70%;
+}
+
+#info{
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    margin-bottom: 6px;
+}
+
+#info h6{
+    font-weight: 400;
+}
+
+
+
+@media (max-width: 477px){
+
+    #orderForm{
+        width: 350px;
+    }
+
+    #orderForm button{
+        width: 45%;
+    }
+
+    .orderBox{
+        margin-top: 20%;
+        
+    }
+
+
+}
