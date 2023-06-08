@@ -397,7 +397,7 @@ color: white;
   margin-left: 50px;
   margin-bottom: 50px;
   border-collapse: collapse;
-	width: 80%;
+	width: 90%;
   border-radius: 30px;
   border: 1px solid #ddd;
   justify-content: space-around;
@@ -417,11 +417,12 @@ padding: 8px;
 }
 
 #issues tr th:nth-child(3),#issues tr td:nth-child(3){
-  word-break: break-all;
+width: 50%;
 }
 
 #issues tr th:nth-child(4),#issues tr td:nth-child(4){
-  width: 50%;
+  word-break: keep-all;
+  width: 100%;
 }
 
 #issues tr:nth-child(even){
